@@ -485,7 +485,7 @@ class NetworkManager(object):
         """
         self._name_to_object[interface_name].mac_address = mac_address
         card = self._name_to_object[interface_name].card
-        self.set_interface_mode(interface_name, "managed")
+        #self.set_interface_mode(interface_name, "managed") # Disabled to make it work for the RPi3 (We need to add nexmon compitability)
 
         self.down_interface(interface_name)
         # card must be turned off(down) before setting mac address
@@ -549,7 +549,7 @@ class NetworkManager(object):
         card = self._name_to_object[interface_name].card
         self.down_interface(interface_name)
         # set interface mode between brining it down and up
-        pyw.modeset(card, mode)
+        #pyw.modeset(card, mode)	# Disabled to make it work for the RPi3 (We need to add nexmon compitability)
 
     def get_interface(self, has_ap_mode=False, has_monitor_mode=False):
         """
@@ -732,7 +732,7 @@ class NetworkManager(object):
             if interface not in self._exclude_shutdown:
                 adapter = self._name_to_object[interface]
                 mac_address = adapter.original_mac_address
-                self.set_interface_mac(interface, mac_address)
+                #self.set_interface_mac(interface, mac_address)		# Disabled to make it work for the RPi3 (We need to add nexmon compitability)
         # remove all the virtual added virtual interfaces
         self.remove_vifs_added()
 

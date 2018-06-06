@@ -259,7 +259,7 @@ class WifiphisherEngine:
         # move the access_points.on_exit before the exit for
         # network manager
         self.access_point.on_exit()
-        self.network_manager.on_exit()
+        #self.network_manager.on_exit()
         self.template_manager.on_exit()
         self.fw.on_exit()
 
