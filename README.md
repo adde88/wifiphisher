@@ -11,6 +11,14 @@
 
 Wifiphisher works on Kali Linux and is licensed under the GPL license.
 
+## Raspberry Pi
+This branch works on the Raspberry Pi 3 Model B+ running Kali Linux 2018.2 with the 'Re4son-v7+' kernel, and the Nexmon patches.
+Start by setting up the wifi interface. I use wlan0 as AP and wlan0mon in monitor-mode. (wlan0mon is the 'virtual interface')
+After setting it up, you need to launch wifiphisher by providing the arguments to the interfaces.
+Example: ```python bin/wifiphisher -eI wlan0mon -aI wlan0```
+
+(Will be looking into the possibility of adding support for Nexmon within the source, instead of the dirty hacks)
+
 ## How it works
 After achieving a man-in-the-middle position using Wi-Fi automatic association techniques (including "KARMA" and "Known Beacons" attacks), Wifiphisher by default redirects all HTTP requests to an attacker-controlled phishing page.
 
